@@ -1,0 +1,11 @@
+<%= simple_form_for product, html: { class: "product form" } do |f| %>
+  <% if product.errors.any? %>
+    <div class="error-message">
+      <%= product.errors.full_messages.to_sentence.capitalize %>
+    </div>
+  <% end %>
+
+  <%= f.input :product_upc, input_html: { autofocus: true } %>
+  <%= link_to "Cancel", products_path, class: "btn btn--light" %>
+  <%= f.submit class: "btn btn--secondary" %>
+<% end %>
